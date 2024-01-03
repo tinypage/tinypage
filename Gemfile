@@ -56,6 +56,12 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  # Omakase Ruby styling
+  gem "rubocop-rails-omakase"
+
+  # Manage Git hooks
+  gem "overcommit"
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
