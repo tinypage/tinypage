@@ -1,0 +1,25 @@
+<div class="h-full w-full flex flex-col p-6">
+  <%= form_with(model: entry, class: "h-full") do |form| %>
+    <% if entry.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(entry.errors.count, "error") %>
+          prohibited this entryfrom being saved:</h2>
+
+        <ul>
+          <% entry.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div data-controller="editor" class="editor h-full flex flex-col">
+      <%= form.text_area :content, value: json_field_value(entry.content), class: "hidden", data: { "editor-target": "content" } %>
+      <div class="grow overflow-y-auto" data-action="mouseenter->editor#focus">
+        <div data-editor-target="container" class="prose"></div>
+      </div>
+      <%= render "toolbar" %>
+    </div>
+
+  <% end %>
+</div>

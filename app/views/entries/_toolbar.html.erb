@@ -1,0 +1,103 @@
+<div class="toolbar" data-editor-target="toolbar">
+
+  <div class="grow">
+
+    <div class="toolbar__button-group">
+
+      <%= editor_toolbar_button(title: "Clear Formatting", action: "clearFormatting", image: "toolbar/clear") %>
+
+      <%= editor_toolbar_space %>
+
+      <%= editor_toolbar_button(action: "toggleMark", title: "Bold (Ctrl+B)", image: "toolbar/strong", params: { mark: "strong" }) %>
+      <%= editor_toolbar_button(action: "toggleMark", title: "Italic (Ctrl+I)", image: "toolbar/italic", params: { mark: "em" }) %>
+      <%= editor_toolbar_button(
+        action: "toggleMark",
+        title: "Underline (Ctrl+U))",
+        image: "toolbar/underline",
+        params: {
+          mark: "underline",
+        },
+      ) %>
+      <%= editor_toolbar_button(
+        action: "toggleMark",
+        title: "Strikethrough",
+        image: "toolbar/strikethrough",
+        params: {
+          mark: "strikethrough",
+        },
+      ) %>
+      <%= editor_toolbar_button(action: "toggleMark", title: "Code", image: "toolbar/code", params: { mark: "code" }) %>
+
+      <%= editor_toolbar_space %>
+
+      <%= editor_toolbar_button(
+        action: "formatBlockType",
+        title: "Heading 1",
+        image: "toolbar/heading_1",
+        params: {
+          type: "heading",
+          attrs: {
+            level: 1,
+          },
+        },
+      ) %>
+
+      <%= editor_toolbar_button(
+        action: "formatBlockType",
+        title: "Heading 1",
+        image: "toolbar/heading_2",
+        params: {
+          type: "heading",
+          attrs: {
+            level: 2,
+          },
+        },
+      ) %>
+
+      <%= editor_toolbar_button(
+        action: "wrapInType",
+        title: "Ordered List",
+        image: "toolbar/ordered_list",
+        params: {
+          type: "ordered_list",
+        },
+      ) %>
+
+      <%= editor_toolbar_button(
+        action: "wrapInType",
+        title: "Bullet List",
+        image: "toolbar/bullet_list",
+        params: {
+          type: "bullet_list",
+        },
+      ) %>
+
+      <%= editor_toolbar_button(
+        action: "wrapInType",
+        title: "Blockquote",
+        image: "toolbar/blockquote",
+        params: {
+          type: "blockquote",
+        },
+      ) %>
+
+      <%= editor_toolbar_button(
+        action: "formatBlockType",
+        title: "Code Block",
+        image: "toolbar/code_block",
+        params: {
+          type: "code_block",
+        },
+      ) %>
+    </div>
+  </div>
+
+  <div class="flex items-center space-x-2">
+    <button type="button" class="toolbar__button" data-action="editor#toggleToolbar"><%= icon "toolbar/toggle_toolbar" %></button>
+    <button type="submit" class="inline-block px-2 py-0.5 rounded bg-stone-700 border border-stone-800 hover:bg-stone-800 text-white">
+      <%= icon "toolbar/send", class: "h-5 w-auto" %>
+    </button>
+
+  </div>
+
+</div>

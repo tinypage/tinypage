@@ -1,0 +1,5 @@
+<%= turbo_stream.update :new_entry do %>
+  <%= dialog do %>
+    <%= render "entries/form", entry: Entry.new %>
+  <% end %>
+<% end %>

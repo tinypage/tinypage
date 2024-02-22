@@ -1,0 +1,5 @@
+<%= turbo_stream.update dom_id(@entry, :edit) do %>
+  <%= dialog do %>
+    <%= render "form", entry: @entry %>
+  <% end %>
+<% end %>

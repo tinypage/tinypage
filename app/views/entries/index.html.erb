@@ -1,0 +1,36 @@
+<div class="h-full flex flex-col">
+  <div class="z-10 p-3">
+    <div class="flex justify-between items-center gap-x-2">
+      <div class="flex justify-center items-center">
+        <%= link_to new_entry_path, { "data-turbo-stream": true, class: "button-primary" } do %>
+          <%= icon "plus", class: "h-5 w-auto stroke-2" %><span>Create Entry</span>
+        <% end %>
+      </div>
+      <div>
+        <input
+          class="rounded-full w-60 border-none text-sm focus:ring-stone-500"
+          type="text" class="input" placeholder="Search"/>
+      </div>
+    </div>
+  </div>
+
+  <%= turbo_frame_tag :entries, class: "grow overflow-y-auto flex flex-col space-y-3 pl-3 pr-5 py-5", style: "scrollbar-gutter: stable" do %>
+    <% @entries.each do |entry| %>
+      <%= turbo_frame_tag entry do %>
+        <%= render entry %>
+      <% end %>
+    <% end %>
+    <div class="flex w-full justify-between py-3">
+      <div>
+        <%= link_to_prev_page @entries, 'Prev Page', class: 'bg-stone-200 hover:bg-stone-300 rounded-full text-sm p-3' %>
+      </div>
+      <div>
+        <%= link_to_next_page @entries, 'Next Page', class: 'bg-stone-200 hover:bg-stone-300 rounded-full text-sm p-3' %>
+      </div>
+    </div>
+    <div class="h-3">
+      <%= turbo_frame_tag :new_entry %>
+    </div>
+  <% end %>
+
+</div>

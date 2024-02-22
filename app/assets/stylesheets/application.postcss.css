@@ -1,2 +1,5 @@
 /* Entry point for your PostCSS build */
 @import "tailwind.css";
+@import "elements.css";
+@import "prosemirror.css";
+@import "toolbar.css";

@@ -1,0 +1,19 @@
+.toolbar {
+  @apply px-2 pt-2 pb-1 flex justify-between;
+
+  .toolbar__button-group {
+    @apply hidden;
+  }
+
+  &._active .toolbar__button-group {
+    @apply block;
+  }
+
+  .toolbar__button {
+    @apply inline-block p-0.5 h-6 w-6 text-stone-600 hover:text-stone-900 hover:bg-stone-200 rounded;
+  }
+
+  .toolbar__button > svg {
+    @apply h-5 w-5;
+  }
+}

@@ -1,0 +1,7 @@
+<%= turbo_stream.update :new_entry %>
+
+<%= turbo_stream.prepend "entries" do %>
+  <%= turbo_frame_tag @entry do %>
+    <%= render @entry %>
+  <% end %>
+<% end %>

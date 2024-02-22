@@ -1,0 +1,12 @@
+<%= content_for :content do %>
+  <div class="container mx-auto max-w-5xl flex h-full">
+    <div class="h-full w-[250px] p-3">
+      <div class="h-full bg-stone-50 rounded-lg border-2 border-dashed"></div>
+    </div>
+    <div class="flex-grow overflow-hidden">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>

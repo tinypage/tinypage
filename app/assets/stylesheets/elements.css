@@ -1,0 +1,9 @@
+html, body {
+  @apply h-screen;
+  background-color: #f8f7f4;
+}
+
+.button-primary {
+  @apply flex items-center space-x-2 px-2 py-2 rounded-md bg-stone-700 border border-stone-800 hover:bg-stone-800 text-white text-sm font-medium;
+  @apply focus:outline-offset-4 focus:outline-1 focus:outline-stone-900;
+}
